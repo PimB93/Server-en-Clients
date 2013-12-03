@@ -13,12 +13,31 @@ public class TestConnection {
 	
 	
 
-	public static void main(String[] args){
-		try {
-			Connection conn = DriverManager.getConnection("jdbc:mysql://" + HOSTNAME + ":" + PORT + "/" + SCHEMA_NAME, USERNAME, PASSWORD);
+	public static void main(String[] args)
+	{
+		Connection conn = null;
+		try 
+		{
+			conn = DriverManager.getConnection("jdbc:mysql://" + HOSTNAME + ":" + PORT + "/" + SCHEMA_NAME, USERNAME, PASSWORD);
 			System.out.println("Success!!!");
-		} catch (SQLException e) {
+		} 
+		catch (SQLException e) 
+		{
 			System.out.println("Kon niet verbinden met de database. Melding: " + e.getMessage());
+		}
+		finally
+		{
+			try 
+			{
+				conn.close();
+				System.out.println("Connectie gesloten");
+			} 
+			catch (SQLException e) 
+			{
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				System.out.println("connection object created failed is null.. :O ");
+			}
 		}
 	}
 	
