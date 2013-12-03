@@ -22,17 +22,17 @@ public class Me
 
 	@POST
 	@Path("/validate")
-	@Produces({"text/html"})
-	@Consumes({"text/html"})
-	public String validateMe()
+	public void validateMe()
 	{
-		return "blaat";
 		// TODO a lot
 	}
 
 	@GET
-	public void getMe()
+	@Produces({"text/html"})
+	@Consumes({"text/html"})
+	public String getMe()
 	{
+		return "<html><h1>Hoi</h1></html>";
 		// TODO a lot
 	}
 
