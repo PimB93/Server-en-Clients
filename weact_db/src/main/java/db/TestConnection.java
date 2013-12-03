@@ -1,8 +1,9 @@
+package db;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class Test {
+public class TestConnection {
 	
 	private static String HOSTNAME = "ec2-176-34-253-124.eu-west-1.compute.amazonaws.com";
 	private static int PORT = 3306;
