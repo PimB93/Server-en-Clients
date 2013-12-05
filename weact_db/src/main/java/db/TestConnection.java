@@ -16,7 +16,7 @@ public class TestConnection {
 	public static void main(String[] args)
 	{
 		Connection conn = null;
-		try 
+		try
 		{
 			conn = DriverManager.getConnection("jdbc:mysql://" + HOSTNAME + ":" + PORT + "/" + SCHEMA_NAME, USERNAME, PASSWORD);
 			System.out.println("Success!!!");
