@@ -48,6 +48,15 @@
 	<!-- List of dependencies for the project -->
 	<!-- TODO: Review and/or update to match your project -->
 	<dependencies>
+
+		<dependency>
+			<groupId>nl.saxionact</groupId>
+			<artifactId>WeACT-DB</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<scope>compile</scope>
+		</dependency>
+
+
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
