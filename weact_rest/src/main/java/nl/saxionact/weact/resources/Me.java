@@ -1,5 +1,6 @@
 package nl.saxionact.weact.resources;
 
+import javax.servlet.ServletContext;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.FormParam;
@@ -9,11 +10,19 @@ import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
+import javax.ws.rs.WebApplicationException;
+import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
+
+import nl.saxionact.weact.model.AuthManager;
+import nl.saxionact.weact.model.Domain;
 
 @Path("/me")
 public class Me
+
 {
+	@Context ServletContext context;
 
 	@POST
 	@Path("/login")
@@ -79,8 +88,22 @@ public class Me
 
 	@GET
 	@Path("/inbox")
-	public void myInbox()
+	@Produces("{application/json}")
+	public void myInbox(@QueryParam("token")String token)
 	{
+		Domain domain = (Domain) context.getAttribute("domain");
+		if(domain != null)
+		{
+			AuthManager manager =  new AuthManager();
+			String user = manager.getUserFromToken(token);
+			if(user != null)
+			{
+				//return iets??
+			}
+			throw new WebApplicationException(Response.Status.UNAUTHORIZED);
+
+		}
+		throw new WebApplicationException(Response.Status.INTERNAL_SERVER_ERROR);
 
 	}
 
