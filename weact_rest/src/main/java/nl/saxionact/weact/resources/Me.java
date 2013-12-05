@@ -1,10 +1,12 @@
 package nl.saxionact.weact.resources;
 
+import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 
 @Path("/me")
@@ -26,8 +28,11 @@ public class Me
 	}
 
 	@GET
-	public void getMe()
+	@Produces({"text/html"})
+	@Consumes({"text/html"})
+	public String getMe()
 	{
+		return "<html><h1>Hoi</h1></html>";
 		// TODO a lot
 	}
 
