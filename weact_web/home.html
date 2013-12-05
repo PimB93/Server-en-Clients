@@ -9,7 +9,7 @@
 <meta name="author" content="">
 <link rel="shortcut icon" href="../../docs-assets/ico/favicon.png">
 
-<title>WeACT</title>
+<title>Starter Template for Bootstrap</title>
 
 <!-- Bootstrap core CSS -->
 <link href="css/bootstrap.css" rel="stylesheet">
@@ -17,7 +17,7 @@
 
 <!-- Custom styles for this template -->
 <link href="css/starter-template.css" rel="stylesheet">
-<link href="css/stylesheet.css" rel="stylesheet">
+<link href="css/martijnseigencss.css" rel="stylesheet">
 <!-- Just for debugging purposes. Don't actually copy this line! -->
 <!--[if lt IE 9]><script src="../../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
 
@@ -55,21 +55,16 @@
 	<div class="container">
 
 		<form class="form-signin">
-			<h2 class="form-signin-heading">Inloggen bij WeACT</h2>
-			<input type="text" class="form-control" placeholder="Gebruikersnaam"
-				autofocus> <input type="password" class="form-control"
-				placeholder="Wachtwoord">
-			<div class="alert alert-danger" id="false-login" style="display: none">Verkeerde combinatie van
-				gebruikersnaam en wachtwoord.</div>
-			<label class="checkbox"> <input type="checkbox"
-				value="remember-me">Ingelogd blijven
+			<h2 class="form-signin-heading">Please sign in</h2>
+			<input type="text" class="form-control" placeholder="Email address"
+				required autofocus> <input type="password"
+				class="form-control" placeholder="Password" required> <label
+				class="checkbox"> <input type="checkbox" value="remember-me">
+				Remember me
 			</label>
-			<button class="btn btn-lg btn-primary btn-block" id="login-button" type="submit">Inloggen</button>
-			<h5>
-				Heeft u nog geen account? Klik dan <a href="/register">hier</a> om u
-				te registreren.
-			</h5>
-
+			<button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+				
+				
 		</form>
 
 	</div>
@@ -81,30 +76,5 @@
 	<!-- Placed at the end of the document so the pages load faster -->
 	<script src="js/jquery-1.10.2.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
-
-	<script>
-	
-		$(document).ready(function() {
-			
-			$("#login-button").click(function() {
-				$.ajax({
-					  url: "",
-					  type: "POST",
-					  data: {  },
-					  dataType: ""
-					});
-					 
-					request.done(function(msg) {
-						alert("succes");
-					});
-					 
-					request.fail(function(jqXHR, textStatus) {
-						$("#false-login").slideDown("slow").delay(2500).slideUp("slow");
-					});
-					
-				}
-			});
-		});
-	</script>
 </body>
 </html>
