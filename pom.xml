@@ -18,6 +18,5 @@
     <modules>
         <module>weact_db</module>
         <module>weact_rest</module>
-	<module>weact_web</module>
     </modules>
 </project>

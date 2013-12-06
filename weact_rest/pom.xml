@@ -55,7 +55,7 @@
 			<groupId>nl.saxionact.multi</groupId>
 			<artifactId>weact_db</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
-			<!-- <scope>compile</scope>-->
+			<scope>compile</scope>
 		</dependency>
 
 
