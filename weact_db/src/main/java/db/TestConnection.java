@@ -10,8 +10,6 @@ public class TestConnection {
 	private static String SCHEMA_NAME = "ein2vd";
 	private static String USERNAME = "ein2vd";
 	private static String PASSWORD = "oleein2vd";
-	
-	
 
 	public static void main(String[] args)
 	{
