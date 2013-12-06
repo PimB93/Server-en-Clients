@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<parent>
+        	<groupId>nl.saxionact.multi</groupId>
+	        <artifactId>weact</artifactId>
+       		<version>0.0.1-SNAPSHOT</version>
+    	</parent>
 	<modelVersion>4.0.0</modelVersion>
-
-	<groupId>nl.saxionact</groupId>
-	<artifactId>weact</artifactId>
-	<version>0.1-SNAPSHOT</version>
+	<artifactId>weact_rest</artifactId>
 	<packaging>war</packaging>
 
 
 	<!-- Project information -->
 	<!-- TODO: Update with your own projectname, description and developers -->
-	<name>Generated project</name>
+	<name>WeACT REST server</name>
 	<description>Based on archetype nl.saxionact.webproject-archetype</description>
 	<developers>
 		<developer>
@@ -48,6 +50,15 @@
 	<!-- List of dependencies for the project -->
 	<!-- TODO: Review and/or update to match your project -->
 	<dependencies>
+
+		<dependency>
+			<groupId>nl.saxionact.multi</groupId>
+			<artifactId>weact_db</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<!-- <scope>compile</scope>-->
+		</dependency>
+
+
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>

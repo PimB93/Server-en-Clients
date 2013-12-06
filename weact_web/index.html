@@ -9,7 +9,7 @@
 <meta name="author" content="">
 <link rel="shortcut icon" href="../../docs-assets/ico/favicon.png">
 
-<title>WeACT</title>
+<title>Starter Template for Bootstrap</title>
 
 <!-- Bootstrap core CSS -->
 <link href="css/bootstrap.css" rel="stylesheet">
@@ -17,7 +17,7 @@
 
 <!-- Custom styles for this template -->
 <link href="css/starter-template.css" rel="stylesheet">
-<link href="css/stylesheet.css" rel="stylesheet">
+<link href="css/martijnseigencss.css" rel="stylesheet">
 <!-- Just for debugging purposes. Don't actually copy this line! -->
 <!--[if lt IE 9]><script src="../../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
 
@@ -43,7 +43,7 @@
 			</div>
 			<div class="collapse navbar-collapse">
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="index.html">Home</a></li>
+					<li class="active"><a href="home.html">Home</a></li>
 					<li><a href="zoeken.html">Zoeken</a></li>
 					<li><a href="inbox.html">Inbox</a></li>
 				</ul>
@@ -52,27 +52,19 @@
 		</div>
 	</div>
 
-	<div class="container" id="form-container">
+	<div class="container">
 
 		<form class="form-signin">
-			<h2 class="form-signin-heading">Inloggen bij WeACT</h2>
-			<input type="text" class="form-control" id="username"
-				placeholder="Gebruikersnaam" autofocus> <input
-				type="password" class="form-control" id="password"
-				placeholder="Wachtwoord">
-			<div class="alert alert-danger" id="false-login"
-				style="display: none">Verkeerde combinatie van gebruikersnaam
-				en wachtwoord.</div>
-			<label class="checkbox"> <input id="stayLoggedIn" type="checkbox"
-				value="remember-me">Ingelogd blijven
+			<h2 class="form-signin-heading">Please sign in</h2>
+			<input type="text" class="form-control" placeholder="Email address"
+				required autofocus> <input type="password"
+				class="form-control" placeholder="Password" required> <label
+				class="checkbox"> <input type="checkbox" value="remember-me">
+				Remember me
 			</label>
-			<button href="#" class="btn btn-lg btn-primary btn-block"
-				id="login-button" type="submit">Inloggen</button>
-			<h5>
-				Heeft u nog geen account? Klik dan <a href="/register">hier</a> om u
-				te registreren.
-			</h5>
-
+			<button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+				
+				
 		</form>
 
 	</div>
@@ -84,62 +76,5 @@
 	<!-- Placed at the end of the document so the pages load faster -->
 	<script src="js/jquery-1.10.2.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
-
-	<script>
-		$(document).ready(function() {
-			
-			$("#username").click(function() { 
-			   	$("#username").removeAttr("style");
-			});
-			
-			$("#password").click(function() { 
-				$("#password").removeAttr("style");
-			});
-			
-			$("#login-button").click(function(e) {
-				e.preventDefault();
-				
-				if($("#username").val().length == 0) {
-					$("#username").css("border-color", "#FF2020");
-					$("#username").css("box-shadow", "0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(126, 255, 104, 0.6)");
-					$("#username").css("outline", "0 none");
-				}
-				if($("#password").val().length == 0) {
-					$("#password").css("border-color", "#FF2020");
-					$("#password").css("box-shadow", "0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(126, 255, 104, 0.6)");
-					$("#password").css("outline", "0 none");
-				}
-				if($("#username").val().length > 0 && $("#password").val().length > 0) {
-					$.ajax({
-						url : "http://serverclientsein2vd.saxionact.eu.cloudbees.net",
-						type : "POST",
-						data : {
-							nickName : $("#username").val(),
-							password : $("#password").val()
-						},
-						dataType : 'json'
-					}).done(function(data) {
-						if (typeof (Storage) !== "undefined") {
-							if ($("#stayLoggedIn").is(':checked')) {
-								localStorage.setItem("authToken", data.auth_token);
-								window.location = "";
-								// store token in localstorage
-								// forward to next page
-							} else {
-								// forward to next page
-							}
-						} else {
-							alert("Met deze browser kun je niet ingelogd blijven.");
-							window.location = "";
-						}
-						alert("succes");
-					}).fail(function(jqXHR, textStatus) {
-						$("#false-login").slideDown("slow").delay(2500).slideUp("slow");
-					});	
-				}
-
-			});
-		});
-	</script>
 </body>
 </html>

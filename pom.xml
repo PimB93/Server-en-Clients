@@ -12,7 +12,7 @@
     <groupId>nl.saxionact.multi</groupId>
     <artifactId>weact</artifactId>
     <packaging>pom</packaging>
-    <version>1.0</version>
+    <version>0.0.1-SNAPSHOT</version>
     <name>Multiproject</name>
 
     <modules>
@@ -20,19 +20,4 @@
         <module>weact_rest</module>
 	<!-- <module>weact_web</module>-->
     </modules>
-
-    <build>
-        <pluginManagement>
-            <plugins>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-compiler-plugin</artifactId>
-                    <configuration>
-                        <source>1.5</source>
-                        <target>1.5</target>
-                    </configuration>
-                </plugin>
-            </plugins>
-        </pluginManagement>
-    </build>
 </project>
