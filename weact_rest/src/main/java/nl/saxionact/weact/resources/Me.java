@@ -44,39 +44,39 @@ public class Me {
 		// TODO a lot
 	}
 
-	@PUT
-	public void editMe() {
-		// TODO a lot
-	}
+//	@PUT
+//	public void editMe() {
+//		// TODO a lot
+//	}
 
-	@POST
-	@Path("/avatar")
-	@Consumes(MediaType.MULTIPART_FORM_DATA)
-	public Response editAvatar(
-			@FormDataParam("file") InputStream uploadedInputStream,
-			@FormDataParam("file") FormDataContentDisposition fileDetail) {
-
-		if (fileDetail.getSize() < 1000000) {
-			byte[] b = new byte[(int) fileDetail.getSize()];
-
-			try {
-				uploadedInputStream.read(b);
-			} catch (IOException e1) {
-				e1.printStackTrace();
-			}
-
-			try {
-				return Response.created(new URI("/me/avatar")).build();
-			} catch (URISyntaxException e) {
-				e.printStackTrace();
-				return Response.status(500).build();
-			}
-		}
-		else{
-			return Response.status(Status.BAD_REQUEST).build();
-		}
-
-	}
+//	@POST
+//	@Path("/avatar")
+//	@Consumes(MediaType.MULTIPART_FORM_DATA)
+//	public Response editAvatar(
+//			@FormDataParam("file") InputStream uploadedInputStream,
+//			@FormDataParam("file") FormDataContentDisposition fileDetail) {
+//
+//		if (fileDetail.getSize() < 1000000) {
+//			byte[] b = new byte[(int) fileDetail.getSize()];
+//
+//			try {
+//				uploadedInputStream.read(b);
+//			} catch (IOException e1) {
+//				e1.printStackTrace();
+//			}
+//
+//			try {
+//				return Response.created(new URI("/me/avatar")).build();
+//			} catch (URISyntaxException e) {
+//				e.printStackTrace();
+//				return Response.status(500).build();
+//			}
+//		}
+//		else{
+//			return Response.status(Status.BAD_REQUEST).build();
+//		}
+//
+//	}
 
 	@GET
 	@Path("/avatar")
@@ -85,39 +85,39 @@ public class Me {
 		return null;
 	}
 
-	@DELETE
-	public void removeMe() {
-
-	}
-
-	@POST
-	@Path("/hideshowmail")
-	public void hideShowMyEmail() {
-
-	}
-
-	@POST
-	@Path("/tags")
-	public void addTag() {
-
-	}
-
-	@DELETE
-	@Path("/tags")
-	public void removeTag() {
-
-	}
-
-	@GET
-	@Path("/inbox")
-	public void myInbox() {
-
-	}
-
-	@POST
-	@Path("/sendmessage/{username}")
-	public void sendMessage() {
-
-	}
+//	@DELETE
+//	public void removeMe() {
+//
+//	}
+//
+//	@POST
+//	@Path("/hideshowmail")
+//	public void hideShowMyEmail() {
+//
+//	}
+//
+//	@POST
+//	@Path("/tags")
+//	public void addTag() {
+//
+//	}
+//
+//	@DELETE
+//	@Path("/tags")
+//	public void removeTag() {
+//
+//	}
+//
+//	@GET
+//	@Path("/inbox")
+//	public void myInbox() {
+//
+//	}
+//
+//	@POST
+//	@Path("/sendmessage/{username}")
+//	public void sendMessage() {
+//
+//	}
 
 }
