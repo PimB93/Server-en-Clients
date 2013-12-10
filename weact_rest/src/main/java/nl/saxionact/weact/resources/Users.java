@@ -2,7 +2,7 @@ package nl.saxionact.weact.resources;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.WebApplicationException;
 
@@ -23,6 +23,7 @@ public class Users
 	}
 	
 	/**
+	 * This function will register a new user with name, email and his password
 	 * 
 	 * @param name 		This is the name of the user 
 	 * @param email		This is the email of the user
@@ -59,11 +60,25 @@ public class Users
 
 	}
 
+	/**
+	 * This function will report a user
+	 * 
+	 * @param username	This is the username of the user that will be reported
+	 * @return			Returns the userobject that is reported
+	 */
 	@POST
-	@Path("/{username}/report")
-	public void reportUser()
+	@Path("/report")
+	public String reportUser(@QueryParam("username") String username) 
 	{
-
+		assert(username != null) : "queryparam username is null";
+		
+		if (username == null) {
+			throw new WebApplicationException(400); 
+		}
+		
+		// report user methode call TODO
+		return "player banned: " + username;
+		
 	}
 
 }
