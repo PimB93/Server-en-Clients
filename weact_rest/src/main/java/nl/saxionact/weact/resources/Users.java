@@ -33,12 +33,15 @@ public class Users
 	@POST
 	@Path("/register")
 	public String register(@QueryParam("name") String name, @QueryParam("email") String email, @QueryParam("password") String password) {
-		assert (name != null) : "queryparam naam is leeg";
-		assert (email != null) : "queryparam email is leeg";
-		assert (password != null) : "queryparam password is leeg";
+		assert (name != null) : "queryparam naam is null";
+		assert (email != null) : "queryparam email is null";
+		assert (password != null) : "queryparam password is null";
+		assert (!name.isEmpty()) : "queryparam naam is leeg";
+		assert (!email.isEmpty()) : "queryparam email is leeg";
+		assert (!password.isEmpty()) : "queryparam password is leeg";
 		
 		// if name, email of password null is then throw exception
-		if (name == null || email == null || password == null) {
+		if (name == null || name.isEmpty() || email == null || email.isEmpty() || password == null || password.isEmpty()) {
 			throw new WebApplicationException(400);
 		}
 		
