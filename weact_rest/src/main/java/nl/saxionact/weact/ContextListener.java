@@ -3,7 +3,6 @@ package nl.saxionact.weact;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 
-import nl.saxionact.weact.model.Domain;
 /**
  * ContextListener for the REST service
  * 
@@ -19,6 +18,8 @@ public class ContextListener implements ServletContextListener {
 	}
 	/**
 	 * The contextInitialized will be called at the start of the server
+	 * 
+	 * @param event	The serverletContextEvent
 	 */
 	@Override
 	public void contextInitialized(ServletContextEvent event) {

@@ -1,26 +1,32 @@
 package nl.saxionact.weact.resources;
-import javax.ws.rs.GET;
+//import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.WebApplicationException;
 
+/**
+ * The Users class
+ * This class will process all the user information from the REST server
+ * 
+ * @author Lars
+ *
+ */
 @Path("/users")
-public class Users
-{
-	@GET
-	public String allUsers()
-	{
-		return "HOI";
-	}
+public class Users {
+	private final int BAD_REQUEST = 400;
+	
+	
+//	@GET
+//	public String allUsers() {
+//		return "HOI";
+//	}
 
-	@GET
-	@Path("/{username}")
-	public void singleUser()
-	{
-
-	}
+//	@GET
+//	@Path("/{username}")
+//	public void singleUser() {
+//
+//	}
 	
 	/**
 	 * This function will register a new user with name, email and his password
@@ -42,26 +48,24 @@ public class Users
 		
 		// if name, email of password null is then throw exception
 		if (name == null || name.isEmpty() || email == null || email.isEmpty() || password == null || password.isEmpty()) {
-			throw new WebApplicationException(400);
+			throw new WebApplicationException(BAD_REQUEST);
 		}
 		
 		// return user object in JSON format TODO
 		return name + " - " + email + " - " + password;
 	}
 
-	@GET
-	@Path("/search")
-	public void searchUsers()
-	{
+//	@GET
+//	@Path("/search")
+//	public void searchUsers() {
+//
+//	}
 
-	}
-
-	@GET
-	@Path("/search/pdf")
-	public void searchUsersPDF()
-	{
-
-	}
+//	@GET
+//	@Path("/search/pdf")
+//	public void searchUsersPDF() {
+//
+//	}
 
 	/**
 	 * This function will report a user
@@ -71,13 +75,12 @@ public class Users
 	 */
 	@POST
 	@Path("/report")
-	public String reportUser(@QueryParam("username") String username) 
-	{
-		assert(username != null) : "queryparam username is null";
-		assert(username != "") : "queryparam username is leeg";
+	public String reportUser(@QueryParam("username") String username) {
+		assert (username != null) : "queryparam username is null";
+		assert (username != "") : "queryparam username is leeg";
 		
 		if (username == null || username.isEmpty()) {
-			throw new WebApplicationException(400); 
+			throw new WebApplicationException(BAD_REQUEST); 
 		}
 		
 		// report user methode call TODO

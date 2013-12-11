@@ -2,8 +2,6 @@ package nl.saxionact.weact.unittest;
 
 import static org.junit.Assert.*;
 
-import javax.ws.rs.WebApplicationException;
-
 import nl.saxionact.weact.resources.Users;
 
 import org.junit.Before;
@@ -18,13 +16,13 @@ public class UsersTest {
 	
 	@Test(expected = AssertionError.class)	
 	public void testRegisterUserWithEmptyParams() {
-		String ret = u.register("", "", "");
+		u.register("", "", "");
 		/* NOT REACHED */
 	}
 
 	@Test(expected = AssertionError.class)	
 	public void testRegisterUserWithNullParams() {
-		String ret = u.register(null, null, null);
+		u.register(null, null, null);
 		/* NOT REACHED */
 	}
 	@Test
