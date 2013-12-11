@@ -4,7 +4,12 @@ import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 
 import nl.saxionact.weact.model.Domain;
-
+/**
+ * ContextListener for the REST service
+ * 
+ * @author Lars
+ *	
+ */
 public class ContextListener implements ServletContextListener {
 
 	@Override
@@ -12,7 +17,9 @@ public class ContextListener implements ServletContextListener {
 		// TODO Auto-generated method stub
 		
 	}
-
+	/**
+	 * The contextInitialized will be called at the start of the server
+	 */
 	@Override
 	public void contextInitialized(ServletContextEvent event) {
 		System.out.println("Context initialized");
