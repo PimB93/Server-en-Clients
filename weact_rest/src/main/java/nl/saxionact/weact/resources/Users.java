@@ -74,8 +74,9 @@ public class Users
 	public String reportUser(@QueryParam("username") String username) 
 	{
 		assert(username != null) : "queryparam username is null";
+		assert(username != "") : "queryparam username is leeg";
 		
-		if (username == null) {
+		if (username == null || username.isEmpty()) {
 			throw new WebApplicationException(400); 
 		}
 		
