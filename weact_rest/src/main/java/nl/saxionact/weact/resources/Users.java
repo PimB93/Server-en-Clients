@@ -1,9 +1,11 @@
 package nl.saxionact.weact.resources;
 //import javax.ws.rs.GET;
+import javax.servlet.ServletContext;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.WebApplicationException;
+import javax.ws.rs.core.Context;
 
 /**
  * The Users class
@@ -14,6 +16,8 @@ import javax.ws.rs.WebApplicationException;
  */
 @Path("/users")
 public class Users {
+	@Context
+	private ServletContext context;
 	private final int BAD_REQUEST = 400;
 	
 	
