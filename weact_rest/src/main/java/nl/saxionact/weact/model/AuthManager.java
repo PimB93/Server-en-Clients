@@ -17,7 +17,10 @@ public class AuthManager {
 	private HashMap<String, String> userTokens;
 	//private HashSet<String> validTokens;
 	
-	// constructor
+	/**
+	 * Constructor for the Authmanager
+	 * This will initialize the userTokens map
+	 */
 	public AuthManager() {
 		this.userTokens = new HashMap<>();
 	}
@@ -34,8 +37,9 @@ public class AuthManager {
 		Set<String> keys = userTokens.keySet();
 			
 		for (String key : keys) {
-			if (userTokens.get(key).equals(user))
+			if (userTokens.get(key).equals(user)) {
 				userTokens.remove(key);
+			}
 		}
 			
 		userTokens.put(token, user);
@@ -53,8 +57,9 @@ public class AuthManager {
 	public String extractOnlyToken(String authHead) {
 		if ((authHead != null) && (!authHead.equals(""))) {
 			return authHead.substring(7);			
-		} else
+		} else {
 			return null;
+		}
 
 	}
 	
@@ -83,10 +88,11 @@ public class AuthManager {
 	 * @return returns the username if valid token
 	 */
 	public String getUserFromToken(String token) {
-		if (userTokens.containsKey(token))
+		if (userTokens.containsKey(token)) {
 			return userTokens.get(token);
-		else
+		} else {
 			return null;
+		}
 	}
 	
 	/**
@@ -95,8 +101,9 @@ public class AuthManager {
 	 * @return returns true if the header token is a valid user token; otherwise false
 	 */
     public boolean verifyAuthHeader(String authText) {
-    	if ((authText == null) || (authText.equals("")))
+    	if ((authText == null) || (authText.equals(""))) {
     		return false;
+    	}
     	
     	// remove bearer
     	String token = extractOnlyToken(authText);

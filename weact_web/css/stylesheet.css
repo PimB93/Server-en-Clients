@@ -11,14 +11,14 @@
 }
 
 .btn-primary {
-	background: #a4c842;
+	background: #01853a;
 	border-color: #033c1c;
 	color: #FFFFFF;
 }
 
 .btn-primary:hover,.btn-primary:focus,.btn-primary:active,.btn-primary.active,.open .dropdown-toggle.btn-primary
 	{
-	background-color: #8aac2b;
+	background-color: #a4c842;
 	border-color: #033c1c;
 	color: #FFFFFF;
 }
@@ -30,5 +30,3 @@ textarea:focus,input[type="text"]:focus,input[type="password"]:focus,input[type=
 		rgba(126, 239, 104, 0.6);
 	outline: 0 none;
 }
-
-/*.container {background:url('http://www.reactiongifs.com/wp-content/uploads/2012/06/swag_dance.gif');} */

@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<parent>
+        	<groupId>nl.saxionact.multi</groupId>
+	        <artifactId>weact</artifactId>
+       		<version>0.0.1-SNAPSHOT</version>
+    	</parent>
 	<modelVersion>4.0.0</modelVersion>
-
-	<groupId>nl.saxionact</groupId>
-	<artifactId>weact</artifactId>
-	<version>0.1-SNAPSHOT</version>
+	<artifactId>weact_rest</artifactId>
 	<packaging>war</packaging>
 
 
 	<!-- Project information -->
 	<!-- TODO: Update with your own projectname, description and developers -->
-	<name>Generated project</name>
+	<name>WeACT REST server</name>
 	<description>Based on archetype nl.saxionact.webproject-archetype</description>
 	<developers>
 		<developer>
@@ -50,8 +52,8 @@
 	<dependencies>
 
 		<dependency>
-			<groupId>nl.saxionact</groupId>
-			<artifactId>WeACT-DB</artifactId>
+			<groupId>nl.saxionact.multi</groupId>
+			<artifactId>weact_db</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 			<scope>compile</scope>
 		</dependency>
@@ -119,6 +121,13 @@
 			<version>${jersey.version}</version>
 			<scope>compile</scope>
 		</dependency>
+		
+		<dependency>
+			<groupId>org.glassfish.jersey.media</groupId>
+			<artifactId>jersey-media-multipart</artifactId>
+			<version>${jersey.version}</version>
+			<scope>compile</scope>
+		</dependency>
 
 		<dependency>
 			<groupId>junit</groupId>
@@ -129,44 +138,6 @@
 	</dependencies>
 
 
-	<!-- Plugins for generating reports for maven site plugin and jenkins -->
-	<reporting>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-project-info-reports-plugin</artifactId>
-				<version>2.6</version>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-javadoc-plugin</artifactId>
-				<version>2.9</version>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-checkstyle-plugin</artifactId>
-				<version>2.11</version>
-				<configuration>
-					<configLocation>not-so-strict-checkstyle.xml</configLocation>
-				</configuration>
-				<reportSets>
-					<reportSet>
-						<reports>
-							<report>checkstyle</report>
-						</reports>
-					</reportSet>
-				</reportSets>
-			</plugin>
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>findbugs-maven-plugin</artifactId>
-				<version>2.5.2</version>
-				<configuration>
-					<xmlOutput>true</xmlOutput>
-				</configuration>
-			</plugin>
-		</plugins>
-	</reporting>
 
 
 	<!-- Build settings for this project -->
