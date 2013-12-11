@@ -1,4 +1,4 @@
-package nl.saxionact.weact.unittest;
+package nl.saxionact.weact.resources;
 
 import static org.junit.Assert.*;
 
