@@ -2,6 +2,7 @@ package nl.saxionact.weact.resources;
 
 import java.net.URI;
 
+import javax.servlet.ServletContext;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.FormParam;
@@ -12,13 +13,21 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
+import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
+import nl.saxionact.weact.ContextListener;
+import nl.saxionact.weact.model.Domain;
+
+
 @Path("/me")
 public class Me {
-
+	
+	@Context
+	private ServletContext context;
+	
 	@POST
 	@Path("/login")
 	public void login(@QueryParam(value = "username") String username,
@@ -86,7 +95,10 @@ public class Me {
 
 	@GET
 	@Path("/inbox")
-	public void myInbox() {
+	@Produces("{application/json}")
+	public void myInbox(@QueryParam("token")String token) {
+		
+	
 
 	}
 
